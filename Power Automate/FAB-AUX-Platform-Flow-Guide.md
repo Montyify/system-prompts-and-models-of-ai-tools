@@ -1,6 +1,7 @@
 # FAB AUX Platform - Power Automate Flow Building Guide
 
 ## 📋 Table of Contents
+- [⚠️ CRITICAL: DLP Compliance Warning](#-critical-dlp-compliance-warning)
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
 - [Architecture Overview](#architecture-overview)
@@ -16,6 +17,61 @@
 - [Troubleshooting Guide](#troubleshooting-guide)
 - [Security Considerations](#security-considerations)
 - [Maintenance and Updates](#maintenance-and-updates)
+
+---
+
+## ⚠️ CRITICAL: DLP Compliance Warning
+
+### 🚨 READ THIS FIRST - AVOID DLP VIOLATIONS
+
+**If you've had DLP (Data Loss Prevention) issues before, this section is for you.**
+
+The **#1 cause** of Power Automate flows being blocked or suspended by IT is:
+
+# ❌ HTTP TRIGGER SET TO "ANYONE"
+
+### The Golden Rule:
+
+```
+✅ ALWAYS USE: "Only users in my tenant"
+❌ NEVER USE: "Anyone"
+```
+
+### Critical Settings to Prevent DLP Violations:
+
+1. **HTTP Trigger Permission (Step 1):**
+   - ✅ **MUST** be set to: **"Only users in my tenant"**
+   - ❌ **NEVER** select: "Anyone"
+   - This is the most common DLP violation
+   - Your flow WILL be blocked/suspended if set wrong
+
+2. **SharePoint Connection:**
+   - ✅ Use only: `https://bankfab.sharepoint.com/sites/FABInbound`
+   - ✅ Sign in with FAB organizational account
+   - ❌ No external SharePoint sites
+   - ❌ No personal Microsoft accounts
+
+3. **Data Flow:**
+   - ✅ Keep all data within FAB tenant
+   - ❌ No external API calls
+   - ❌ No external email addresses
+   - ❌ No data export outside organization
+
+### Before You Start:
+
+- [ ] Read the [DLP Compliance Guide](DLP-Compliance-Guide.md) for complete details
+- [ ] Verify you have Power Automate Premium or per-user license
+- [ ] Confirm you understand the "Only users in my tenant" requirement
+- [ ] Know who to contact in IT if issues arise
+
+### If You Get a DLP Violation:
+
+1. **Check HTTP trigger** → Set to "Only users in my tenant"
+2. **Remove external connectors** if any were added
+3. **Verify SharePoint connection** uses FAB account
+4. **Contact IT** if still blocked (see DLP Compliance Guide)
+
+**For detailed DLP compliance information, troubleshooting, and IT communication templates, see: [DLP-Compliance-Guide.md](DLP-Compliance-Guide.md)**
 
 ---
 
@@ -154,6 +210,34 @@
 3. Select: **When a HTTP request is received** (Request connector)
 
 #### Configuration:
+
+---
+
+### 🚨 DLP COMPLIANCE WARNING - MOST CRITICAL STEP 🚨
+
+**THIS IS WHERE MOST DLP VIOLATIONS HAPPEN!**
+
+```
+┌────────────────────────────────────────────────────────────┐
+│                                                            │
+│  ⚠️  IF YOU SET THIS WRONG, YOUR FLOW WILL BE BLOCKED  ⚠️  │
+│                                                            │
+│  When configuring "Who can trigger the flow":             │
+│                                                            │
+│  ✅ CORRECT:   "Only users in my tenant"                  │
+│  ❌ WRONG:     "Anyone"                                    │
+│                                                            │
+│  Setting it to "Anyone" WILL trigger DLP policy           │
+│  violations and your flow will be suspended by IT.        │
+│                                                            │
+│  Double-check this setting before saving!                 │
+│                                                            │
+└────────────────────────────────────────────────────────────┘
+```
+
+**See [DLP-Compliance-Guide.md](DLP-Compliance-Guide.md) for complete details on avoiding DLP issues.**
+
+---
 
 **1. HTTP Method**
 - Click **Show advanced options**

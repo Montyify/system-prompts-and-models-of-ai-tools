@@ -6,7 +6,41 @@ This directory contains comprehensive documentation for building a **Power Autom
 
 ---
 
+## 🚨 START HERE: DLP Compliance
+
+**⚠️ If you've experienced DLP (Data Loss Prevention) issues before, read this FIRST:**
+
+### [DLP Compliance Guide](DLP-Compliance-Guide.md) ⭐ **MUST READ**
+
+This guide specifically addresses how to avoid DLP policy violations. The **#1 cause** of Power Automate flows being blocked by IT is incorrect HTTP trigger settings.
+
+**Critical Rule:** Always use **"Only users in my tenant"** — Never use "Anyone"
+
+Also available:
+- **[DLP Pre-Flight Checklist](DLP-PreFlight-Checklist.md)** - Print and use before deployment
+
+---
+
 ## 📁 Documentation Structure
+
+### 0. [DLP Compliance Guide](DLP-Compliance-Guide.md) ⚠️ **READ FIRST**
+**Critical guide to avoid DLP violations**
+
+Essential reading before building the flow:
+- Understanding DLP in Power Automate
+- Common DLP violations and how to avoid them
+- Critical settings checklist
+- What to do if DLP blocks your flow
+- IT communication templates
+- Alternative approaches if HTTP trigger is blocked
+
+**Best for:** Everyone building this flow - READ THIS FIRST to avoid having your flow suspended
+
+**Length:** ~12,000 words | Critical reference
+
+**Related:** [DLP Pre-Flight Checklist](DLP-PreFlight-Checklist.md) (printable checklist)
+
+---
 
 ### 1. [FAB AUX Platform Flow Building Guide](FAB-AUX-Platform-Flow-Guide.md)
 **Main comprehensive guide** - Start here!
@@ -65,9 +99,11 @@ Contains:
 
 ### For First-Time Builders
 
-1. **Read:** [FAB AUX Platform Flow Building Guide](FAB-AUX-Platform-Flow-Guide.md)
-2. **Reference:** Keep [JSON Schema Reference](JSON-Schema-Reference.md) open for copy-paste
-3. **Troubleshoot:** Use [Quick Troubleshooting Guide](Quick-Troubleshooting-Guide.md) if issues arise
+1. **⚠️ FIRST:** Read [DLP Compliance Guide](DLP-Compliance-Guide.md) to avoid policy violations
+2. **Print:** [DLP Pre-Flight Checklist](DLP-PreFlight-Checklist.md) to use during building
+3. **Build:** Follow [FAB AUX Platform Flow Building Guide](FAB-AUX-Platform-Flow-Guide.md)
+4. **Reference:** Keep [JSON Schema Reference](JSON-Schema-Reference.md) open for copy-paste
+5. **Troubleshoot:** Use [Quick Troubleshooting Guide](Quick-Troubleshooting-Guide.md) if issues arise
 
 ### For Form Developers
 
@@ -168,15 +204,15 @@ Data         Route Logic          Status Tracking
 
 ## 📖 Document Comparison
 
-| Feature | Flow Building Guide | JSON Schema Reference | Troubleshooting Guide |
-|---------|-------------------|---------------------|---------------------|
-| **Purpose** | Complete implementation | Technical specs | Problem solving |
-| **Depth** | Very detailed | Moderate | Quick reference |
-| **Length** | ~30,000 words | ~8,000 words | ~5,000 words |
-| **Best For** | Learning & building | Development & testing | Fixing issues |
-| **Code Samples** | Some | Many | Key snippets |
-| **Step-by-Step** | Yes | No | Yes (for fixes) |
-| **Reference** | Comprehensive | Focused | Quick |
+| Feature | DLP Guide | Flow Building Guide | JSON Schema | Troubleshooting |
+|---------|-----------|-------------------|-------------|----------------|
+| **Purpose** | Avoid DLP violations | Complete implementation | Technical specs | Problem solving |
+| **Priority** | ⚠️ READ FIRST | Primary guide | Reference | As needed |
+| **Depth** | Compliance focused | Very detailed | Moderate | Quick reference |
+| **Length** | ~12,000 words | ~30,000 words | ~8,000 words | ~5,000 words |
+| **Best For** | Preventing IT blocks | Learning & building | Development | Fixing issues |
+| **Critical?** | **YES - Essential** | Yes | No | As needed |
+| **When to Read** | Before starting | During building | During testing | When errors occur |
 
 ---
 
