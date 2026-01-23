@@ -114,7 +114,6 @@ Sponsor the most comprehensive collection of AI system prompts and reach thousan
 - [**Comet Assistant**](./Comet%20Assistant/)
 - [**Anthropic**](./Anthropic/)
 - [**Amp**](./AMp/)
-- [**Power Automate**](./Power%20Automate/)
 
 ---
 
